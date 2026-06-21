@@ -1,268 +1,312 @@
-p.about {
-        color: rgb(95, 95, 95);
-        font-size: 200%;
-        line-height: 1.5;
-        margin-right: 48%;
-        margin-left: 10%;
-        margin-top: 0.5em;
-      }
-
-.photos-wip {
-        font-size: 500%;
-        line-height: 1.5;
-        margin-right: 10%;
-        margin-left: 10%;
-        margin-top: 18%;
-        text-align: center;
-      }
-
-
-.wip {
-        font-size: 500%;
-        line-height: 1.5;
-        margin-right: 10%;
-        margin-left: 10%;
-        margin-top: 18%;
-        text-align: center;
-      }
-.box {
-    background-color: beige;
+/* ==========================================================================
+   VARIABLE — largeur colonne texte (partagée entre body, navbar et breakpoints)
+   Changer ici suffit pour tout resynchroniser.
+   ========================================================================== */
+:root {
+  --text-col: 55%;
 }
 
-.box-4 {
-    background-image: url(images/perdican\ remove.png);
-    background-size: contain;
-    background-position: center;
+/* ==========================================================================
+   BASE RESET
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-.grid-container {
-    margin-left: 58%;
-    margin-top: -25%;
-    display: grid;
-    grid-auto-columns: 200px;
-    grid-auto-rows: 200px;
-    gap: 1em;
-    grid-template-areas: 
-    "box-1 box-1 box-2"
-    "box-3 box-4 box-2";
+html {
+  overflow-x: hidden;
 }
 
-@media(max-width: 56em){
-    .grid-container {
-       gap: 1em;
-       grid-template-areas: 
-       "box-1 box-1"
-       "box-2 box-3"
-       "box-2 box-4";
-    }
-}
-
-body {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-}
-.navbar ul{
-    list-style-type: none;
-    display: inline-flex;
-    gap: 4px;
-    border-radius: 15px;
-    background-color:rgb(255, 255, 255);
-    padding: 6px;
-    margin-left: 9em;
-    margin-bottom: 0px;
-    border: 2px solid rgb(219, 217, 217);
-}
-.navbar a{
-    font-size: 1.4em;
-    color: rgb(95, 95, 95);
-    text-decoration: none;
-    padding: 0px 14px;
-    display: block;
-    text-align: center;
-    transition: 0.3s;
-    border-radius: 10px;
-}
-.navbar a:hover{
-    background-color: rgb(240, 240, 240);
-    
-}
-.navbar li{
-    float: left;
-}
-.navbar a.active {
-    color: black;
-    background-color: rgb(240, 240, 240);
-}
-#header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 2em;
-    width: 100%;
-}
-.btns {
-    display: flex;
-    margin-right: 2em;
-}
-.btn { 
-    margin: 3px;
-    text-decoration: none;
-    padding: 0.6rem 1.5rem;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 1rem;
-    background: white;
-    color: rgb(95, 95, 95);
-    border: 2px solid rgb(185, 185, 185);
-    transition: 0.3s;
-}
-.btn-active {
-    margin: 3px;
-    text-decoration: none;
-    padding: 0.6rem 1.5rem;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 1rem;
-    background: rgb(240, 240, 240);
-    color: rgb(0, 0, 0);
-    border: 2px solid rgb(185, 185, 185);
-}
-.btn:hover {
-    background: rgb(240, 240, 240);
-    
-}
 img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
-@media screen and (max-width: 768px) {
+/* ==========================================================================
+   LAYOUT DESKTOP — 2 colonnes : texte à gauche, grille à droite
+   ========================================================================== */
+body {
+  display: grid;
+  grid-template-columns: var(--text-col) 1fr;
+}
 
-  html, body {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-    position: relative !important;
-    font-size: 16px !important;
+#header {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 15px 0;
+}
+    
+/* ==========================================================================
+   NAVBAR — centrée dans la colonne texte via var(--text-col)
+   ========================================================================== */
+.navbar {
+  width: var(--text-col);
+  display: flex;
+  justify-content: center;
+}
+
+.navbar ul {
+  list-style: none;
+  display: inline-flex;
+  gap: 4px;
+  border-radius: 15px;
+  background-color: white;
+  padding: 6px;
+  margin: 0; /* l'alignement est géré par le padding-left du header */
+  border: 2px solid rgb(219, 217, 217);
+}
+
+.navbar li {
+  float: left;
+}
+
+.navbar a {
+  font-size: 1.4em;
+  color: rgb(95, 95, 95);
+  text-decoration: none;
+  padding: 0 14px;
+  display: block;
+  text-align: center;
+  transition: background-color 0.3s;
+  border-radius: 10px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  background-color: rgb(240, 240, 240);
+}
+
+.navbar a.active {
+  color: black;
+}
+
+/* ==========================================================================
+   BOUTONS HEADER
+   ========================================================================== */
+.btns {
+  display: flex;
+  margin-right: 5em;
+}
+
+.btn,
+.btn-active {
+  margin: 3px;
+  text-decoration: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid rgb(185, 185, 185);
+}
+
+.btn {
+  background: white;
+  color: rgb(95, 95, 95);
+  transition: background-color 0.3s;
+}
+
+.btn-active {
+  background: rgb(240, 240, 240);
+  color: black;
+}
+
+.btn:hover {
+  background: rgb(240, 240, 240);
+}
+
+/* ==========================================================================
+   TEXTE ABOUT — aligné à 3em du bord gauche, comme la navbar
+   ========================================================================== */
+p.about {
+  color: rgb(95, 95, 95);
+  font-size: clamp(1.25rem, 2.2vw, 2rem);
+  line-height: 1.6;
+  margin: 0.3em 0 0 3em;
+  padding-right: 1.5em;
+}
+
+/* ==========================================================================
+   PAGES WIP
+   ========================================================================== */
+.wip,
+.photos-wip {
+  grid-column: 1 / -1;
+  font-size: clamp(2rem, 8vw, 5rem);
+  line-height: 1.5;
+  margin: 10% 10% 0;
+  text-align: center;
+}
+
+/* ==========================================================================
+   BOITES INDEX — colonne droite, premier bout visible en bas de l'écran
+   ========================================================================== */
+.box-1 { grid-area: box-1; }
+.box-2 { grid-area: box-2; }
+.box-3 { grid-area: box-3; }
+.box-4 { grid-area: box-4; }
+
+.box {
+  background-color: beige;
+}
+
+.box-4 {
+  background-image: url(images/perdican\ remove.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.grid-container {
+  grid-column: 2;
+  grid-row: 2 / 5;
+  align-self: start;
+  margin: 4em 0em 0 2em;
+  display: grid;
+  grid-template-columns: repeat(3, 160px);
+  grid-template-rows: repeat(2, 160px);
+  grid-template-areas:
+    "box-1 box-1 box-2"
+    "box-3 box-4 box-2";
+  gap: 1em;
+}
+
+/* Grands écrans (≥ 1440px) — texte et cases grandissent */
+@media screen and (min-width: 1440px) {
+  :root { --text-col: 50%; }
+
+  p.about {
+    font-size: clamp(2rem, 2.2vw, 2.5rem);
   }
 
-  * {
-    max-width: 100% !important;
-    box-sizing: border-box !important;
+  .grid-container {
+    grid-template-columns: repeat(3, 210px);
+    grid-template-rows: repeat(2, 210px);
+  }
+}
+
+/* Très grands écrans (≥ 1800px) — encore plus grand */
+@media screen and (min-width: 1800px) {
+  :root { --text-col: 48%; }
+
+  p.about {
+    font-size: clamp(2.2rem, 2.2vw, 2.8rem);
   }
 
-  #header {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    padding: 18px 5px !important;
-    margin-bottom: 10px !important;
+  .grid-container {
+    grid-template-columns: repeat(3, 250px);
+    grid-template-rows: repeat(2, 250px);
   }
+}
 
-  .navbar {
-    width: auto !important;
-  }
-
-  .navbar ul {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    gap: 12px !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    list-style: none !important;
-  }
-
-  .navbar a {
-    font-size: 1rem !important;
-    padding: 6px 10px !important;
+/* ==========================================================================
+   TABLETTE (601px – 1024px) — centré, grille réduite
+   ========================================================================== */
+@media screen and (max-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .btns {
-    display: none !important;
+    display: none;
   }
 
-  .about {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 auto 1.5rem auto !important;
-    padding: 0 32px !important;
-    box-sizing: border-box !important;
-    text-align: left !important;
-    white-space: normal !important;
-    float: none !important;
-    
-    font-size: 24px !important;
-    line-height: 1.6 !important;
-  }
-  .grid-container {
-    display: flex !important;
-    flex-direction: column !important;
-    position: static !important;
-    float: none !important;
-    
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 16px !important;
-    box-sizing: border-box !important;
-    margin-top: 30px !important;
+  #header {
+    justify-content: center;
+    padding: 10px 0;
   }
 
-  .box {
-    grid-area: auto !important;
-    width: 100% !important;
-    height: 200px !important;
-    margin-bottom: 15px !important;
-  }
-  
-  .grid-container {
-    display: flex !important;
-    flex-direction: column !important;
-    position: static !important;
-    float: none !important;
-    
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 32px !important;
-    box-sizing: border-box !important;
-    margin-top: 40px !important;
+  .navbar {
+    width: auto;
   }
 
-  .box {
-    grid-area: auto !important;
-    width: 100% !important;
-    height: 250px !important;
-    margin-bottom: 20px !important;
+  .navbar ul {
+    margin-left: 0;
+  }
+
+  p.about {
+    max-width: 80%;
+    padding-right: 0;
+    margin: 0.8em auto 0.4em;
   }
 
   .grid-container {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    
-    position: static !important;
-    float: none !important;
-    clear: both !important;
-    
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 40px 0 0 0 !important;
-    padding: 0 32px !important;
-    box-sizing: border-box !important;
+    grid-column: unset;
+    grid-row: unset;
+    align-self: unset;
+    justify-self: unset;
+    margin: 30px auto;
+    margin-top: 30px;
+    max-width: 90vw;
+    grid-template-columns: repeat(3, minmax(0, 160px));
+    grid-template-rows: repeat(2, minmax(0, 160px));
+    grid-template-areas:
+      "box-1 box-1 box-2"
+      "box-3 box-4 box-2";
+    justify-content: center;
+  }
+
+  .wip,
+  .photos-wip {
+    grid-column: unset;
+    width: 100%;
+    margin-top: 8%;
+  }
+}
+
+/* ==========================================================================
+   MOBILE (≤ 600px) — texte plus grand, cases empilées
+   ========================================================================== */
+@media screen and (max-width: 600px) {
+  #header {
+    padding: 6px 5px;
+  }
+
+  .navbar {
+    width: 95%;
+    max-width: 360px;
+  }
+
+  .navbar ul {
+    justify-content: center;
+    width: 100%;
+    padding: 4px;
+    gap: 0;
+    border-width: 1px;
+  }
+
+  .navbar a {
+    font-size: 0.85rem;
+    padding: 4px 8px;
+    font-weight: 500;
+  }
+
+  p.about {
+    font-size: 1.5rem;
+    max-width: 90%;
+    margin: 0.7em auto 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 2rem auto 0;
+    padding: 0 16px;
+    gap: 16px;
   }
 
   .box {
-    grid-area: auto !important;
-    
-    width: 70vw !important;
-    height: 70vw !important;
-    max-width: 320px !important;
-    max-height: 320px !important;
-    
-    margin: 0 auto 20px auto !important;
+    width: 80vw;
+    height: 80vw;
+    max-width: 300px;
+    max-height: 300px;
   }
 }
