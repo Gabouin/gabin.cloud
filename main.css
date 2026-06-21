@@ -232,6 +232,7 @@ p.about {
     max-width: 80%;
     padding-right: 0;
     margin: 0.8em auto 0.4em;
+    font-size: 2rem;
   }
 
   .grid-container {
@@ -267,7 +268,7 @@ p.about {
   }
 
   .navbar {
-    width: 95%;
+    width: 110%;
     max-width: 360px;
   }
 
