@@ -124,7 +124,7 @@ p.about {
   color: rgb(95, 95, 95);
   font-size: clamp(1.25rem, 2.2vw, 2rem);
   line-height: 1.6;
-  margin: 0.3em 0 0 3em;
+  margin: 0.8em 0 0 3em;
   padding-right: 1.5em;
 }
 
