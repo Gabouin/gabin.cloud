@@ -1,14 +1,7 @@
-/* ==========================================================================
-   VARIABLE — largeur colonne texte (partagée entre body, navbar et breakpoints)
-   Changer ici suffit pour tout resynchroniser.
-   ========================================================================== */
 :root {
   --text-col: 55%;
 }
 
-/* ==========================================================================
-   BASE RESET
-   ========================================================================== */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -23,9 +16,6 @@ img {
   display: block;
 }
 
-/* ==========================================================================
-   LAYOUT DESKTOP — 2 colonnes : texte à gauche, grille à droite
-   ========================================================================== */
 body {
   display: grid;
   grid-template-columns: var(--text-col) 1fr;
@@ -39,9 +29,6 @@ body {
   padding: 20px 0 15px 0;
 }
     
-/* ==========================================================================
-   NAVBAR — centrée dans la colonne texte via var(--text-col)
-   ========================================================================== */
 .navbar {
   width: var(--text-col);
   display: flex;
@@ -55,7 +42,7 @@ body {
   border-radius: 15px;
   background-color: white;
   padding: 6px;
-  margin: 0; /* l'alignement est géré par le padding-left du header */
+  margin: 0;
   border: 2px solid rgb(219, 217, 217);
 }
 
@@ -83,9 +70,6 @@ body {
   color: black;
 }
 
-/* ==========================================================================
-   BOUTONS HEADER
-   ========================================================================== */
 .btns {
   display: flex;
   margin-right: 5em;
@@ -93,6 +77,8 @@ body {
 
 .btn,
 .btn-active {
+  position: relative;
+  z-index: 0;
   margin: 3px;
   text-decoration: none;
   padding: 0.6rem 1.5rem;
@@ -105,21 +91,29 @@ body {
 .btn {
   background: white;
   color: rgb(95, 95, 95);
-  transition: background-color 0.3s;
 }
 
 .btn-active {
-  background: rgb(240, 240, 240);
+  background: white;
   color: black;
 }
 
-.btn:hover {
+.btn::before,
+.btn-active::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 14px;
+  background: transparent;
+  transition: background-color 0.3s;
+  z-index: -1;
+}
+
+.btn:hover::before,
+.btn-active::before {
   background: rgb(240, 240, 240);
 }
 
-/* ==========================================================================
-   TEXTE ABOUT — aligné à 3em du bord gauche, comme la navbar
-   ========================================================================== */
 p.about {
   color: rgb(95, 95, 95);
   font-size: clamp(1.25rem, 2.2vw, 2rem);
@@ -128,9 +122,6 @@ p.about {
   padding-right: 1.5em;
 }
 
-/* ==========================================================================
-   PAGES WIP
-   ========================================================================== */
 .wip,
 .photos-wip {
   grid-column: 1 / -1;
@@ -140,9 +131,6 @@ p.about {
   text-align: center;
 }
 
-/* ==========================================================================
-   BOITES INDEX — colonne droite, premier bout visible en bas de l'écran
-   ========================================================================== */
 .box-1 { grid-area: box-1; }
 .box-2 { grid-area: box-2; }
 .box-3 { grid-area: box-3; }
@@ -173,7 +161,6 @@ p.about {
   gap: 1em;
 }
 
-/* Grands écrans (≥ 1440px) — texte et cases grandissent */
 @media screen and (min-width: 1440px) {
   :root { --text-col: 50%; }
 
@@ -187,7 +174,6 @@ p.about {
   }
 }
 
-/* Très grands écrans (≥ 1800px) — encore plus grand */
 @media screen and (min-width: 1800px) {
   :root { --text-col: 48%; }
 
@@ -201,9 +187,6 @@ p.about {
   }
 }
 
-/* ==========================================================================
-   TABLETTE (601px – 1024px) — centré, grille réduite
-   ========================================================================== */
 @media screen and (max-width: 1024px) {
   body {
     display: flex;
@@ -259,9 +242,6 @@ p.about {
   }
 }
 
-/* ==========================================================================
-   MOBILE (≤ 600px) — texte plus grand, cases empilées
-   ========================================================================== */
 @media screen and (max-width: 600px) {
   #header {
     padding: 6px 5px;
@@ -354,14 +334,5 @@ p.about {
   padding-bottom: 0.8em;
   font-size: 1.3em;
 }
-/*.gallery-large .photo,
-.gallery-long .photo {
-  transition: transform 0.8s;
-}
-.gallery-large .photo:hover,
-.gallery-long .photo:hover {
-  transform: scale(1.3);
-} */
-
 
   
