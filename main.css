@@ -311,3 +311,57 @@ p.about {
     max-height: 300px;
   }
 }
+
+.gallery-large {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 250px);
+  justify-content: center;
+  gap: 2em;
+}
+.gallery-large img{
+  width: 250px;
+  height: auto;
+  object-fit: cover;
+}
+.gallery-long {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 400px);
+  justify-content: center;
+  gap: 2em;
+}
+.gallery-long img{
+  width: 400px;
+  height: auto;
+  object-fit: cover;
+}
+.gap-photos {
+  grid-column: 1 / -1;
+  height: 2em;
+}
+.photo-title {
+  color: rgb(95, 95, 95);
+  padding-top: 0.5em;
+  grid-column: 1 / -1;
+  text-align: center;
+}
+.photo-description {
+  grid-column: 1 / -1;
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto 2em;
+  padding-bottom: 0.8em;
+  font-size: 1.3em;
+}
+/*.gallery-large .photo,
+.gallery-long .photo {
+  transition: transform 0.8s;
+}
+.gallery-large .photo:hover,
+.gallery-long .photo:hover {
+  transform: scale(1.3);
+} */
+
+
+  
