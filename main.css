@@ -299,12 +299,12 @@ p.about {
 .gallery-large {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 250px);
+  grid-template-columns: repeat(auto-fit, 300px);
   justify-content: center;
   gap: 2em;
 }
 .gallery-large img{
-  width: 250px;
+  width: 300px;
   height: auto;
   object-fit: cover;
 }
