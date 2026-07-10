@@ -338,5 +338,35 @@ p.about {
   padding-bottom: 0.8em;
   font-size: 1.3em;
 }
-
-  
+.newsletter-title {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 2em;
+}
+.newsletter-description {
+  margin-top: 0;
+  grid-column: 1 / -1;
+  text-align: center;
+}
+.newsletter-form {
+  grid-column: 1 / -1;
+  text-align: center;
+  border: 2px solid rgb(162, 161, 161);
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 2em auto 0; 
+  padding: 2em;
+}
+.newsletter-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.newsletter-form input[type="submit"] {
+  margin-top: 1em;
+}
+.newsletter-form input[type="email"] {
+  margin-top: 1.5em;
+  border: 0.5px solid rgb(162, 161, 161);
+  border-radius: 5px;
+}
