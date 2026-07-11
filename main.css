@@ -84,6 +84,13 @@ body {
   border-radius: 4px;
 }
 
+.pagering-footer {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  margin: 2em 0;
+}
+
 .btn,
 .btn-active {
   position: relative;
@@ -149,6 +156,7 @@ p.about {
   background-color: #f7f3e8;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .box-image {
   position: absolute;
@@ -376,6 +384,19 @@ p.about {
 .gap-photos {
   grid-column: 1 / -1;
   height: 2em;
+}
+.photo {
+  position: relative;
+  transition: transform 0.6s ;
+}
+.photo img {
+  border-radius: 10px;
+}
+.photo:hover {
+  transform: rotate(3deg);
+}
+.photo:nth-of-type(2n):hover {
+  transform: rotate(-6deg);
 }
 .photo-title {
   color: rgb(95, 95, 95);
