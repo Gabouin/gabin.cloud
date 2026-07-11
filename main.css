@@ -85,10 +85,13 @@ body {
 }
 
 .pagering-footer {
-  grid-column: 1 / -1;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
-  margin: 2em 0;
+  padding: 0.5em 0;
 }
 
 .btn,
@@ -140,6 +143,7 @@ p.about {
 
 .wip,
 .photos-wip {
+  color: rgb(95, 95, 95);
   grid-column: 1 / -1;
   font-size: clamp(2rem, 8vw, 5rem);
   line-height: 1.5;
@@ -153,10 +157,9 @@ p.about {
 .box-4 { grid-area: box-4; }
 
 .box {
-  background-color: #f7f3e8;
+  background-color: #fdf2f2;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .box-image {
   position: absolute;
@@ -405,6 +408,7 @@ p.about {
   text-align: center;
 }
 .photo-description {
+  color: rgb(95, 95, 95);
   grid-column: 1 / -1;
   text-align: center;
   max-width: 80%;
@@ -413,33 +417,48 @@ p.about {
   font-size: 1.3em;
 }
 .newsletter-title {
+  color: rgb(95, 95, 95);
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 2em;
+  font-size: 1.6em;
+  margin-bottom: 0;
+}
+.newsletter-description {
+  color: rgb(95, 95, 95);
+  font-size: 1.28em;
+  margin-bottom: 0.2em
+}
+.contact-title {
+  color: rgb(95, 95, 95);
   grid-column: 1 / -1;
   text-align: center;
   margin-top: 2em;
 }
-.newsletter-description {
-  margin-top: 0;
-  grid-column: 1 / -1;
-  text-align: center;
-  font-size: 1.3em;
-}
 .newsletter-form {
   grid-column: 1 / -1;
   text-align: center;
-  border: 2px solid rgb(162, 161, 161);
   border-radius: 10px;
-  max-width: 460px;
-  margin: 2em auto 0;
+  max-width: 1100px;
+  margin: 0em auto 0;
   padding: 2.4em;
 }
 .newsletter-form form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.8em;
+}
+.newsletter-inputs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8em;
 }
 .newsletter-form input[type="submit"] {
-  margin-top: 1em;
-  font-size: 1.35em;
+  font-size: 1em;
   padding: 0.4em 1.3em;
   border-radius: 25px;
   border: 2px solid;
@@ -453,12 +472,17 @@ p.about {
   transition: border-color 0.3s;
 }
 .newsletter-form input[type="email"] {
-  margin-top: 1.5em;
   border: 0.5px solid rgb(162, 161, 161);
   border-radius: 5px;
-  font-size: 1.35em;
+  font-size: 1.2em;
   padding: 0.2em 0.4em;
 }
 .newsletter-form label {
-  font-size: 1.35em;
+  font-size: 1em;
+}
+footer {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 1.5em;
+  margin-top: 1.5em;
 }
