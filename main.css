@@ -31,9 +31,9 @@ body {
     
 .navbar {
   width: var(--text-col);
-  display: flex;
+  display: flex-start;
   justify-content: center;
-  margin-left: 0.6em;
+  margin-left: 1.5%;
 }
 
 .navbar ul {
@@ -44,6 +44,7 @@ body {
   background-color: white;
   padding: 6px;
   margin: 0;
+  margin-left: 10%;
   border: 1px solid rgb(219, 217, 217);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -141,8 +142,7 @@ p.about {
   padding-right: 1.5em;
 }
 
-.wip,
-.photos-wip {
+.wip {
   color: rgb(95, 95, 95);
   grid-column: 1 / -1;
   font-size: clamp(2rem, 8vw, 5rem);
@@ -234,6 +234,7 @@ p.about {
 
   p.about {
     font-size: clamp(2rem, 2.2vw, 2.5rem);
+    
   }
 
   .grid-container {
@@ -420,22 +421,16 @@ p.about {
   padding-bottom: 0.8em;
   font-size: 1.3em;
 }
-.blog-page {
-  min-height: calc(100vh - 16px);
-  grid-template-rows: auto 1fr auto auto;
-  padding-bottom: 4em;
-}
 .newsletter-title {
   color: rgb(95, 95, 95);
-  grid-column: 1 / -1;
   text-align: center;
-  margin-top: 2em;
-  font-size: 1.6em;
-  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 1.1em;
+  margin-bottom: 0.8em;
 }
 .newsletter-description {
   color: rgb(95, 95, 95);
-  font-size: 1.28em;
+  font-size: 1em;
   margin-bottom: 0.2em
 }
 .contact-title {
@@ -443,6 +438,8 @@ p.about {
   grid-column: 1 / -1;
   text-align: center;
   margin-top: 2em;
+  margin-bottom: 0;
+  font-size: 2em;
 }
 .contact-links {
   grid-column: 1 / -1;
@@ -462,7 +459,7 @@ p.about {
   border-radius: 15px;
   background-color: white;
   text-decoration: none;
-  transition: transform 0.4s;
+  transition: transform 0.6s;
 }
 .contact-card:hover {
   transform: rotate(3deg) scale(1.05);
@@ -483,12 +480,14 @@ p.about {
 .contact-github { border: 4px solid rgba(251, 203, 246, 0.476); }
 .contact-slack { border: 4px solid rgba(196, 255, 251, 0.652); }
 .newsletter-form {
-  grid-column: 1 / -1;
+  grid-column: 2;
+  grid-row: 3;
+  align-self: start;
   text-align: center;
   border-radius: 10px;
-  max-width: 1100px;
+  max-width: 500px;
   margin: 0em auto 0;
-  padding: 2.4em;
+  padding: 1em;
 }
 .newsletter-form form {
   display: flex;
@@ -521,7 +520,7 @@ p.about {
 .newsletter-form input[type="email"] {
   border: 0.5px solid rgb(162, 161, 161);
   border-radius: 5px;
-  font-size: 1.2em;
+  font-size: 1em;
   padding: 0.2em 0.4em;
 }
 .newsletter-form label {
@@ -529,17 +528,44 @@ p.about {
 }
 .article-title {
   text-align: left;
-  margin-left: 10%;
+  margin-left: 14%;
   margin-top : 2em;
   font-size: 2em;
   color: rgb(95, 95, 95)
 }
 .article-wip {
   text-align: left;
-  margin-left: 10%;
+  margin-left: 14%;
   margin-top: 1em;
   font-size: 1.35em;
   color: rgb(95, 95, 95)
+  
+}
+.newsletter-grid {
+  grid-column: 1/-1;
+  margin-left: 7%;
+  margin-right: 45%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+}
+.newsletter1 {
+  text-align: left;
+  border: 3px solid rgba(255, 0, 230, 0.304);
+  border-radius: 15px;
+  padding: 0.2em 1.2em 0.2em;
+  text-decoration: none;
+}
+.news1-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: black;
+}
+.news1-description {
+  color: rgb(59, 59, 59)
+}
+.newsletter1:hover {
+  border: 7px solid rgba(255, 0, 230, 0.304);
 }
 footer {
   grid-column: 1 / -1;
@@ -577,4 +603,10 @@ footer {
   text-decoration-color: rgb(164, 226, 255); 
   text-decoration-style: solid;
   color: rgb(129, 215, 255); 
+}
+.blog-page {
+  min-height: calc(100vh - 16px);
+  padding-bottom: 4em;
+  align-content: start;
+  padding-bottom: 4em;
 }
