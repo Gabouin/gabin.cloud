@@ -7,7 +7,7 @@
 </h1>
 
 <h4 align="center">
-My little digital world — a handmade personal website, plain HTML & CSS, no framework.
+My "little digital world", a handmade personal website with HTML and CSS.
 </h4>
 
 <div align="center">
@@ -35,13 +35,13 @@ My little digital world — a handmade personal website, plain HTML & CSS, no fr
 
 ## About the Project
 
-**gabintavernier.com** is my personal website, where I share my hardware projects, my analog photography and (soon) my blog/newsletter. Everything is written by hand: no framework, no build step, just HTML, CSS and a few lines of JS.
+**gabintavernier.com** is my personal website, where I share my hardware projects, my analog photography and (soon) my blog/newsletter. Everything is written by hand: no framework, no build step, just HTML and CSS.
 
 ### Features
 
-- **Animated boxes** on the home page that reveal my pictures and projects on hover (tap on mobile)
-- **Analog photography gallery** shot on film, on Réunion Island and elsewhere
-- **Newsletter subscription** powered by Buttondown
+- **Animated boxes** on the home page that reveal my pictures and projects on hover
+- **Analog photography gallery** shot on film, on Reunion Island and elsewhere
+- **Newsletter subscription** powered by Buttondown (I lowk got my acc suspended but will be up soon)
 - **Page ring webring** in the footer to discover other Hack Clubbers' websites
 - **88x31 badge** because a personal website without one is not a real personal website
 - **Fully responsive** layout, from desktop grids to stacked mobile views
