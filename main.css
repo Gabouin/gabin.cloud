@@ -8,6 +8,8 @@
 
 html {
   overflow-x: hidden;
+  position: relative;
+  min-height: 100%;
 }
 
 img {
@@ -19,6 +21,7 @@ img {
 body {
   display: grid;
   grid-template-columns: var(--text-col) 1fr;
+  padding-bottom: 4.5em;
 }
 
 #header {
@@ -72,12 +75,19 @@ body {
 .navbar a.active {
   color: black;
 }
-
 .btns {
   display: flex;
-  margin-right: 5em;
+  gap: 1em;
+  margin-right: 2em;
 }
+.github-link,
+.instagram-link {
+  text-decoration: wavy;
+  text-decoration-color: black;
+  color: rgb(95, 95, 95);
+  font-size: 1.1em;
 
+}
 .badge-placeholder {
   width: 88px;
   height: 31px;
@@ -86,10 +96,14 @@ body {
 }
 
 .pagering-footer {
+  position: absolute;
+  bottom: 1.5em;
+  left: 0;
+  width: 100%;
+  margin: 0;
   display: flex;
   justify-content: center;
   padding: 0.5em 0;
-  margin-top: auto;
 }
 
 .btn,
